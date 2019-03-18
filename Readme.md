@@ -26,7 +26,7 @@ type cd gallery on terminal
 Known bugs
 No bugs but in case of encounter contact me.
 
-Technologies used
+### Technologies used:
 Python 3.6
 HTML for the structure
 Bootstrap 4 for the design
@@ -39,5 +39,5 @@ For any support please contact me on:
  yvetteumubyeyi2@gmail.com
   or 0782237885.
 
-License
+### License
 MIT Copyright (c) 2019 Yvette Umubyeyi.
