@@ -1,0 +1,59 @@
+{% extends 'all-photos/base.html' %}
+
+{% block content %}
+{{block.super}}
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <boby>
+            <div class="container-fluid">
+                    <div class="row">
+                        {% for img in images %}
+                           
+                                    <a data-toggle="modal" data-target="#{{img.id}}"style="cursor:pointer" ><img src="{{img.image.url}}"></a>           
+                  
+                        {% endfor %}
+                    </div>
+                
+                
+                {% for img in images %}
+                
+                <div class="modal fade bd-example-modal-lg" id="{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                
+                                <div class="row">
+                                        <div class="col-md-12 modal-image">
+                                        
+                                                <h1 id="cat"><span class="font-weight-bold">{{img.category.photo_category}}</span></h1>
+                                           
+                                                <hr>
+                                            <p>{{img.description}}</p>
+                                            <hr>
+                                            <a href="/image/{{img.category.photo_category}}/{{img.id}}">
+                                                <img src="{{img.image.url}}" alt="{{img.name}}" id="single" ><br><br>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-12 modal-text" >
+                                            
+                                            
+                                            <hr>
+                                            <h5 class="modal-title" id="modal-title">Name: {{img.name}} </h5>
+                                            <p>  <span class="font-weight-bold">Located at:</span>{{img.location.photo_location }}</p>
+                                            <p>Posted on: <span class="font-weight-bold">{{img.post_date|timesince}}</span> ago </p>
+                                        </div>
+                                    </div> 
+                                    </div>
+                                    <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                          </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+    
+        </boby>
+    </html>          
